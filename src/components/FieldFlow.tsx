@@ -224,8 +224,6 @@ interface FieldLineProps {
 }
 
 function FieldLine({ points, color, phaseOffset, pulseSpeed, pulseIntensity }: FieldLineProps) {
-  const lineRef = useRef<any>(null)
-  
   // Create geometry with positions and colors
   const geometry = useMemo(() => {
     const geom = new THREE.BufferGeometry()
@@ -253,10 +251,7 @@ function FieldLine({ points, color, phaseOffset, pulseSpeed, pulseIntensity }: F
   
   // Animate pulse along the full-length line
   useFrame(({ clock }) => {
-    if (!lineRef.current || !lineRef.current.geometry) return
-    
-    const geom = lineRef.current.geometry
-    const colors = geom.attributes.color as THREE.BufferAttribute
+    const colors = geometry.attributes.color as THREE.BufferAttribute
     if (!colors) return
     
     const t = clock.getElapsedTime()
@@ -298,15 +293,21 @@ function FieldLine({ points, color, phaseOffset, pulseSpeed, pulseIntensity }: F
   
   if (points.length < 2) return null
   
+  const material = useMemo(() => {
+    return new THREE.LineBasicMaterial({
+      vertexColors: true,
+      transparent: true,
+      opacity: 0.9,
+      linewidth: LINE_THICKNESS,
+    })
+  }, [])
+  
+  const line = useMemo(() => {
+    return new THREE.Line(geometry, material)
+  }, [geometry, material])
+  
   return (
-    <line ref={lineRef} geometry={geometry}>
-      <lineBasicMaterial
-        vertexColors
-        transparent
-        opacity={0.9}
-        linewidth={LINE_THICKNESS}
-      />
-    </line>
+    <primitive object={line} />
   )
 }
 
