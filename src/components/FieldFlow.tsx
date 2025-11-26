@@ -1,5 +1,5 @@
 // Field Flow visualization - global-scale field lines spanning the entire scene
-import { useMemo, useRef } from 'react'
+import { useMemo } from 'react'
 import { useFrame } from '@react-three/fiber'
 import * as THREE from 'three'
 import { useFieldStore } from '@/state/store'
