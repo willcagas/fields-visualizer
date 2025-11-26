@@ -453,6 +453,25 @@
   background: #666;
 }
 
+/* Footer styling */
+.sidebar-footer {
+  text-align: center;
+  font-size: 0.85em;
+  color: #777;
+  padding: 1rem 0;
+}
+
+.sidebar-footer a {
+  color: #646cff;
+  text-decoration: none;
+  transition: color 0.2s;
+}
+
+.sidebar-footer a:hover {
+  color: #747bff;
+  text-decoration: underline;
+}
+
 /* Sidebar tooltip styling - copied from FormulaPanel, adjusted for top position */
 .sidebar-tooltip-top {
   position: absolute;

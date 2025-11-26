@@ -582,6 +582,20 @@ export default function Sidebar({
         <h3 className="section-title">Calculations</h3>
         <FormulaPanel />
       </section>
+
+      {/* Footer */}
+      <section className="sidebar-section" style={{ marginTop: 'auto', paddingTop: '1.5rem', borderTop: '1px solid #3a3a3a' }}>
+        <div className="sidebar-footer">
+          Made with ❤️ by{' '}
+          <a 
+            href="https://wcagas.com" 
+            target="_blank" 
+            rel="noopener noreferrer"
+          >
+            William Cagas
+          </a>
+        </div>
+      </section>
     </div>
   )
 }
