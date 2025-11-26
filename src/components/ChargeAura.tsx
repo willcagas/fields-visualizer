@@ -15,7 +15,6 @@ const BASE_RADIUS = 0.5 // Base radius of the aura
 const MAX_VALUE_TO_VISUALIZE = 10.0 // Clamp value for radius calculation
 const SCALE_FACTOR = 0.15 // How much extra radius per unit value
 const MIN_OPACITY = 0.25
-const MAX_OPACITY = 0.35
 const PULSE_AMPLITUDE = 0.05 // Subtle pulsing amplitude
 const PULSE_SPEED = 2.0 // Pulses per second
 

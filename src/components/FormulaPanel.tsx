@@ -176,14 +176,6 @@ export default function FormulaPanel() {
     return num.toFixed(decimals)
   }
 
-  // Format constant for display (always show in scientific notation if it's a constant)
-  const formatConstant = (num: number): string => {
-    if (num >= 1e6 || num < 1e-3) {
-      return num.toExponential(2)
-    }
-    return num.toString()
-  }
-
   // Format constant for LaTeX display
   const formatConstantLatex = (num: number): string => {
     if (num >= 1e6 || num < 1e-3) {

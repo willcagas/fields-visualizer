@@ -224,7 +224,7 @@ interface FieldLineProps {
 }
 
 function FieldLine({ points, color, phaseOffset, pulseSpeed, pulseIntensity }: FieldLineProps) {
-  const lineRef = useRef<THREE.Line>(null)
+  const lineRef = useRef<any>(null)
   
   // Create geometry with positions and colors
   const geometry = useMemo(() => {
