@@ -1,0 +1,207 @@
+/* Formula panel specific styles */
+
+.formula-item {
+  padding: 0.75rem;
+  background-color: #333;
+  border-radius: 4px;
+  border: 1px solid #3a3a3a;
+  position: relative;
+}
+
+.formula-latex-container {
+  padding: 0.5rem;
+  border-radius: 3px;
+}
+
+.formula-latex-container .katex {
+  font-size: 1.1em;
+  user-select: none;
+}
+
+.formula-header {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-bottom: 0.5rem;
+}
+
+.formula-name {
+  font-size: 0.85em;
+  font-weight: 600;
+  color: #ddd;
+  flex: 1;
+}
+
+.formula-help-button {
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  border: 1px solid #646cff;
+  background-color: #3a3a3a;
+  color: #646cff;
+  font-size: 0.75em;
+  font-weight: bold;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.2s;
+  padding: 0;
+  line-height: 1;
+  flex-shrink: 0;
+}
+
+.formula-help-button:hover {
+  background-color: #646cff;
+  color: #fff;
+  transform: scale(1.1);
+}
+
+.formula-help-button.locked {
+  background-color: #646cff;
+  color: #fff;
+}
+
+.formula-equation {
+  margin-top: 0.25rem;
+}
+
+.formula-equation code {
+  color: #4dabf7;
+  font-size: 0.9em;
+  font-family: 'Courier New', monospace;
+}
+
+.formula-tooltip {
+  position: absolute;
+  top: calc(100% + 0.5rem);
+  left: 0;
+  right: 0;
+  z-index: 1000;
+  pointer-events: auto;
+  animation: fadeIn 0.2s ease-in;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-4px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.formula-tooltip-content {
+  background-color: #2a2a2a;
+  border: 1px solid #646cff;
+  border-radius: 4px;
+  padding: 0.75rem;
+  font-size: 0.8em;
+  color: #ddd;
+  line-height: 1.5;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5);
+  position: relative;
+}
+
+.formula-tooltip-content::before {
+  content: '';
+  position: absolute;
+  bottom: 100%;
+  left: 1rem;
+  border: 6px solid transparent;
+  border-bottom-color: #646cff;
+}
+
+/* Keep existing formula styles */
+.formula-constant {
+  color: #ffd43b;
+  font-weight: 600;
+}
+
+.formula-charge {
+  color: #ff8787;
+}
+
+.formula-mass {
+  color: #51cf66;
+}
+
+/* Live formula styles - consistent alignment and sizing */
+.formulas-live {
+  padding-top: 0.75rem;
+  border-top: 1px solid #3a3a3a;
+}
+
+.live-formula {
+  font-size: 0.95em;
+  color: #ddd;
+  line-height: 1.6;
+}
+
+.formula-line {
+  margin: 0.5rem 0;
+  display: block;
+}
+
+.formula-line.formula-indented {
+  margin-left: 1rem;
+}
+
+.formula-line.formula-section-spacing {
+  margin-top: 0.75rem;
+}
+
+.formula-label {
+  color: #ccc;
+  font-weight: 500;
+  font-size: 0.95em;
+}
+
+.formula-label strong {
+  color: #fff;
+  font-weight: 600;
+}
+
+.formula-substitution {
+  margin: 0.25rem 0 0.25rem 1rem;
+  color: #aaa;
+  font-size: 0.95em;
+  font-style: italic;
+}
+
+.formula-result {
+  margin: 0.25rem 0 0.5rem 1rem;
+  color: #4dabf7;
+  font-weight: 600;
+  font-size: 0.95em;
+}
+
+.formula-value {
+  color: #4dabf7;
+  font-weight: 600;
+  margin-left: 0.5rem;
+}
+
+.formula-note {
+  margin: 0.25rem 0 0.25rem 1rem;
+  font-size: 0.85em;
+  color: #aaa;
+  font-style: italic;
+}
+
+.formula-distance-item {
+  margin-left: 0.5rem;
+  margin-top: 0.25rem;
+}
+
+/* Ensure consistent LaTeX rendering */
+.live-formula .katex {
+  font-size: 1em !important;
+}
+
+.live-formula .katex-display {
+  margin: 0.5em 0 !important;
+}
+
